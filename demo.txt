@@ -1,0 +1,32 @@
+local Laptop/desktop/workarea
+
+remote-server
+
+
+instagaram www.instagram.com  // server
+
+app
+
+mobile 
+camera photos click // local
+
+
+www.github.com // repository often called as repo.
+      repo mishra 
+
+cloning repository
+
+
+git command starts with git as prefix
+
+
+git push local to server
+
+git pull server to local
+
+demo.txt     local to server or add to version control
+
+git add -A
+
+add a message 
+
