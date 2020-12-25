@@ -1,0 +1,146 @@
+NAME- ANANT MISHRA
+ROLL NUMBER- 200940381013
++++++++++++++++++++++++++
+
+2.Write a query to get details of all students who are older than 18 years.
+ans. 
+SELECT studentName FROM student WHERE studentAge>18;
+=====================================================================================
+3. Write a query to get all courses whose courseName ends with "ing".	
+ans.
+SELECT courseName FROM course WHERE courseName LIKE'%ing';
+======================================================================
+4.Write a query to calculate average age of all students living in each city.	
+ans.
+SELECT avg(studentAge) FROM student ORDER BY city;
+=========================================================================
+5.Display cities and number of students who live in those cities.		
+ans
+SELECT studentId,city FROM student;
+==========================================================================
+6. Write a query to add a Foreign Key constraint in student table on column courseId using column courseId in course table.								(1)
+ans
+
+ALTER TABLE student
+ADD CONSTRAINT fk_id FOREIGN KEY(courseId) REFERENCES course(courseid);
+==============================================================================
+7.Using appropriate join, write a query to find the number of students who opted for course ‘Networking’.												(2)
+ans.
+SELECT count(s.studentId),c.courseName FROM student s
+LEFT JOIN course c
+ON s.courseid=c.courseid WHERE courseName='Networking';
+==============================================================================================================================
+8.Using subquery, write a query to get details of students who opted for course ‘Programming’.
+ans
+SELECT studentName FROM student WHERE courseID=(SELECT courseId FROM course WHERE courseName='Programming');
+=========================================================================================================================
+9.Write a query to add a new column in course table with name courseCredit with decimal value and default value as 4.0 (Use appropriate SQL Datatype)						(2)
+ans
+ALTER TABLE course
+ADD COLUMN courseCredit DECIMAL(5,5);
+========================================================================================================================================================================
+10.
+Write a query to update the studentName to ‘Michael’ in students table whose studentId is 4.							                   					(1)	
+ans
+UPDATE student
+SET studentName='Michael'
+WHERE studentId=4;
+==========================================================================================================================================================================================
+11.
+Write a query to delete record from table student whose studentName is ‘Neha’	
+ans
+DELETE FROM student
+WHERE studentName='Neha'
+================================================================================================================================================================================================
+12 Write a query to create view vw_studDetails with following columns studentId, studentName, studentCourse(name of course). The view should be sorted according to studentId			
+CREATE VIEW vw_studDetails  AS
+SELECT studentID,studentName FROM student
+ORDER BY studentID;
+=====================================================================================================================================================================================================
+13.
+Write a procedure proc_age using table student to display ‘JUNIOR Student’ if studentAge is less than 18, ‘SENIOR Student’ if studentAge is equal to 18, ‘GRADUATE Student’  if studentAge is greater than 18. Take studentId as input parameter.
+ans.
+DELIMITER $$
+CREATE PROCEDURE proc_age(IN stud_id int)
+BEGIN
+DECLARE a INT;
+SET a =SELECT studentAge  FROM student WHERE studentId=stud_id;
+IF(age<18)
+THEN
+SELECT 'Junior Student';
+ELSEIF(age=18)
+SELECT 'SENIOR student';
+ELSEIF(age>18)
+SELECT 'GRADUATE sudent';
+END IF;
+END $$
+======================================================================================================================
+
+14.
+ Write a before delete trigger on course table.  If you delete a row from course table then it will change the value of courseId to null in the respective entries in student table.
+DELIMITER $$
+CREATE TRIGGER bef_del BEFORE DELETE ON course
+FOR EACH ROW
+UPDATE student
+SET studentId=NULL;
+END $$
+=============================================================================================================================
+15.
+) Write a function to find whether a input string is palindrome or not, return the result.
+
+ans
+DELIMITER $$
+CREATE FUNCTION func1( str varchar(20)) RETURNS varchar(20)
+BEGIN
+DECLARE x varchar(20);
+SET x=str;
+if(x=''|| isnull(x))
+THEN
+RETURN'NO SUCH STRING';
+END IF;
+IF (REVERSE(x) = str)
+THEN
+RETURN 'STRING IS PALINDROM';
+END IF;
+END $$
+
+SELECT func1('Ana');
+===============================================================================================================================================================
+
+1 question of sql
+(1) Create a table with name cities in your schema with following design.			(2)
+ 	COLUMN NAME		DATA TYPE		LENGTH		CONSTRAINT
+	-------------------------------------------------------------------
+	city_id			integer		6			PRIMARY_KEY
+	city_name			varchar   	     100			NOT NULL
+	city_state			varchar		50			NOT NULL
+
+
+ans
+CREATE TABLE cities(
+city_id int(6) NOT NULL PRIMARY KEY,
+city_name varchar(100),
+city_state varchar(50)
+);
+ 
+==================================================================================================================================================
+MONGO DB
+16.
+Write mongodb query to create a new “CDAC” database with collection “Employee”.
+ans.
+use CDAC   //THIS QUERY WILL CREATE DATABASE CDAC.
+
+db.cdac.createCollection("Employee")
+====================================================================================================================================================
+
+17.
+  Write mongodb query to print top 5 records in the collection “Employee” in a nice readable format.
+
+db.cdac.Employee.find().limit(5).pretty()  //THIS QUERY WILL SHOW THE TOP 5 Employees in Employee COLLECTION	
+=============================================================================================================================	
+
+
+++++++++++++++++++++++++++++++++++++++++++++END++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+

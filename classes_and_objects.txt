@@ -1,0 +1,87 @@
+student
+
+states/properties/data:
+rollNo;
+name;
+age;
+marks;
+
+behaviors/methods/functions:
+
+learning();
+playing();
+writing();
+reading();
+givingExam();
+
+=================================
+
+
+
+
+class String
+{
+} 
+
+
+1
+Ram
+21
+78.5
+
+stud1
+
+
+Constructor
+================
+
+It is a function of the class.
+Its name is similar to the class name.
+There is no return type for constructor.
+Used to initialize the data of the object at the time of creation of object.
+
+default values
+Number - 0
+Reference variable - null
+char - null character
+boolean - false
+
+new Student(1,"Ram",21,75.5);
+
+Student(int rn, String n, int a, double m)
+{
+}
+
+. (dot) is called member access operator.
+
+referenced object : The object which is being referenced by the reference
+variable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
