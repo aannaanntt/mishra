@@ -30,3 +30,37 @@ git add -A
 
 add a message 
 
+git add -A
+git status
+git commit -m "heelo there"
+
+git config --global user.email "anantmishra2307@gmail.com
+
+git config --global user.name "aannaanntt"
+
+git push
+
+
+1.how to use git with eclipse
+
+2.conflict issue
+
+3.make one member as a repo
+add all member
+
+create feaTURE BRANCGH FOR EACH TEAM MEMBER	
+
+ do all tasks
+
+assign to each other
+
+
+code review
+and merge
+with java files
+situation of conflict 
+when 2 developers created 2 branches 
+when they make changes on same line of a file then there is conflict 
+save it for sir
+
+hi everybody how are you doing
