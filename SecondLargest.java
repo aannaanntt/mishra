@@ -1,26 +1,27 @@
-package arrays.programs;
-
-public class SecondLargest {
-	public static void main(String[] args) {
-
-		int arr[] = { 6, 9, 8, 2, 4, 3, 1, 5, 7 };
-		int temp;
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = i + 1; j < arr.length; j++) {
-				if (arr[i] < arr[j]) {
-					temp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = temp;
-				
-				}
-			}
-			if(i==1) {
-				break;
-			}
+class SecondLargest{
+	public static void main(String args[]){
+		int arr[] = { 6, 8, 2, 4, 3, 1, 5, 7, 9 };
+		
+		int largest=Integer.MIN_VALUE;
+		int second_largest=Integer.MAX_VALUE;
+		
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]>largest){
+				second_largest=largest;
+				largest=arr[i];
+			}else if(arr[i]>second_largest && arr[i]!=largest){
 			
-
+				second_largest=arr[i];
+			}
+		}if(second_largest==Integer.MIN_VALUE){
+			
+			System.out.println("There is no second largest element");
+		}else{
+			System.out.println("second largest value is" + " " + second_largest);
+			
 		}
-		System.out.print("Second largest element is" + " " + arr[1]);
-
+	
+	
 	}
+
 }
